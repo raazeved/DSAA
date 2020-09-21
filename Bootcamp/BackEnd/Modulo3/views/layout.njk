@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
+    <head>
 
-{%block head %}
-  <title>Rogerio Azevedo </title>
-  <link rel="stylesheet" href="/styles.css">
-{% endblock %}
-</head>
+        {% block head %}
+            <title>Rogerio Azevedo</title>
+        {% endblock %}
 
-  <body>
-  <header>
-   <div class="links">
-        <a href="/">Sobre</a>
-        <a href="/portfolio">Aulas</a>  
-   </div>
-  </header>
-  {% block content %}  {% endblock %}
-</body>
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+    <body>
+        <header>
+            <div class="links">
+                <a href="/">Sobre</a>
+                <a href="/portfolio">Aulas</a>
+            </div>
+        </header>
 
+        {% block content %}{% endblock %}
+
+        
+    </body>
 </html>

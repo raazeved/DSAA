@@ -1,23 +1,23 @@
-{% extends "layout.html" %}
-{% block content %}
+{% extends "layout.njk" %}
 
-{%block head %}
-  <title> About - Rogerio Azevedo </title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+{% block head %}
+    <title>Sobre - {{ about.name }}</title>
 {% endblock %}
 
-   <div id="wrapper">
-          <img src="https://avatars2.githubusercontent.com/u/9908344?s=460&u=09085799e6632e677154874a7d5225d0892a7887&v=4" alt="Rogerio Azevedo">
-          <h1> Rogerio Azevedo </h1>
-          <h2>Instrutor - Activa Click</h2> 
-          <p>Programador full-stack, focado em trazer o melhor ensino para iniciatens em programação. Colaborador da <a href="https://www.activaclick.com.br" target="_blank">Activa Click</a></p>
-  </div>
 
-  <div id="Links-footer" class="links">
-    <a href="https://github.com/raazeved/"  target="_blank">Github</a>
-    <a href="https://twitter.com/raazeved75/"  target="_blank">Twitter</a>  
-    <a href="https://www.linkedin.com/in/raazeved"  target="_blank">Linkedin</a> 
-  </div>
+{% block content %}
 
-  {% endblock %}
+<div id="wrapper">
+    <img src="{{ about.avatar_url }}" alt="Imagem de {{ about.name }}">
+    <h1>{{ about.name }}</h1>
+    <h2>{{ about.role }}</h2>
+    <p>{{ about.description }}</p>
+</div>
+
+<div id="links-footer" class="links">
+    {% for link in about.links %}
+        <a href="{{ link.url }}" target="_blank">{{ link.name }}</a>
+    {% endfor %}
+</div>
+
+{% endblock %}
